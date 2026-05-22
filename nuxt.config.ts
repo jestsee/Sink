@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     redirectStatusCode: '301',
     linkCacheTtl: 60,
     redirectWithQuery: false,
-    homeURL: '',
+    homeURL: '', // Deprecated: use routeRules['/'].redirect instead
     cfAccountId: '',
     cfApiToken: '',
     dataset: 'sink',
@@ -45,6 +45,7 @@ export default defineNuxtConfig({
   routeRules: {
     '/': {
       prerender: true,
+      redirect: 'https://www.jestsee.com',
     },
     '/api/**': {
       cors: process.env.NUXT_API_CORS === 'true',
